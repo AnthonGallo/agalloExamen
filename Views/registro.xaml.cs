@@ -1,9 +1,9 @@
 namespace agalloExamen.Views;
 
-public partial class Registro : ContentPage
+public partial class registro : ContentPage
 {
     private string usuario;
-    public Registro(string usuarioRecibido)
+    public registro(string usuarioRecibido)
     {
         InitializeComponent();
         usuario = usuarioRecibido;

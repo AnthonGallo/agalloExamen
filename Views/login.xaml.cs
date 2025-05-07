@@ -21,7 +21,7 @@ public partial class login : ContentPage
 
         if (users.ContainsKey(usuario) && users[usuario] == clave)
         {
-            Navigation.PushAsync(new Views.Registro(usuario));
+            Navigation.PushAsync(new Views.registro(usuario));
         }
         else
         {
