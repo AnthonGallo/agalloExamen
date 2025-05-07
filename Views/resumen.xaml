@@ -2,39 +2,64 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="agalloExamen.Views.resumen"
-             Title="resumen">
-    <ScrollView>
-        <VerticalStackLayout>
-            <Label Text="Usuario conectado: {Binding Usuario}" />
-            <Label Text="RESUMEN" FontSize="22" HorizontalOptions="Center" />
+             Title="Resumen">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
 
-            <Grid RowDefinitions="*,*,*,*,*,*,*,*" ColumnDefinitions="*,*">
-                <Label Text="Nombre" Grid.Row="0" Grid.Column="0" />
-                <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" />
+        <Label 
+            Text="RESUMEN"
+            Style="{StaticResource TituloPrincipal}"
+            TextColor="Blue"/>
 
-                <Label Text="Apellido" Grid.Row="1" Grid.Column="0" />
-                <Label Text="{Binding Apellido}" Grid.Row="1" Grid.Column="1" />
+        <Label 
+            x:Name="lblUsuarioConectado"
+            Style="{StaticResource LabelFormulario}"/>
 
-                <Label Text="VA" Grid.Row="2" Grid.Column="0" />
-                <Label Text="{Binding VA}" Grid.Row="2" Grid.Column="1" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
 
-                <Label Text="Fecha" Grid.Row="3" Grid.Column="0" />
-                <Label Text="{Binding Fecha}" Grid.Row="3" Grid.Column="1" />
+            <Label Text="Nombre:" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblNombre" Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
 
-                <Label Text="Ciudad" Grid.Row="4" Grid.Column="0" />
-                <Label Text="{Binding Ciudad}" Grid.Row="4" Grid.Column="1" />
+            <Label Text="Apellido:" Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblApellido" Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
 
-                <Label Text="Monto Inicial" Grid.Row="5" Grid.Column="0" />
-                <Label Text="{Binding Inicial}" Grid.Row="5" Grid.Column="1" />
+            <Label Text="VA:" Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblVA" Grid.Row="2" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
 
-                <Label Text="Cuota Mensual" Grid.Row="6" Grid.Column="0" />
-                <Label Text="{Binding Cuota}" Grid.Row="6" Grid.Column="1" />
+            <Label Text="Fecha:" Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblFecha" Grid.Row="3" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
 
-                <Label Text="Pago Total" Grid.Row="7" Grid.Column="0" />
-                <Label Text="{Binding PagoTotal}" Grid.Row="7" Grid.Column="1" />
-            </Grid>
+            <Label Text="Ciudad:" Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblCiudad" Grid.Row="4" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
 
-            <Button x:Name="btnCerrarSesion" Text="Cerrar Sesión" Clicked="btnCerrarSesion_Clicked" />
-        </VerticalStackLayout>
-    </ScrollView>
+            <Label Text="Monto Inicial:" Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblMontoInicial" Grid.Row="5" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
+
+            <Label Text="Cuota Mensual:" Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblCuotaMensual" Grid.Row="6" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
+
+            <Label Text="Pago Total:" Grid.Row="7" Grid.Column="0" Style="{StaticResource LabelFormulario}"/>
+            <Label x:Name="lblPagoTotal" Grid.Row="7" Grid.Column="1" Style="{StaticResource LabelFormulario}"/>
+        </Grid>
+
+        <Button 
+            Text="Cerrar Sesión" 
+            Style="{StaticResource BotonPrimario}"
+            Clicked="BtnCerrarSesion_Clicked"/>
+    </VerticalStackLayout>
 </ContentPage>
